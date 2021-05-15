@@ -1,3 +1,3 @@
 pyTelegramBotAPI
 requests
-cowin
+cowin 0.0.5
