@@ -1,8 +1,9 @@
 from logging import error
 from cowin_api import CoWinAPI
 import telebot
+import requests
 
-
+browser_header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
 
 bot = telebot.TeleBot("1873127810:AAEKguCOmszM-yxSguts-TOB4eVXoZX2ul8")
 
@@ -36,7 +37,7 @@ example "/slot 560001" """)
             #start colleting info
             try: 
                 cowin = CoWinAPI()
-                available_centers = cowin.get_availability_by_pincode(pin_code)
+                available_centers = requests.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=560064&date=16-05-2021",browser_header) #cowin.get_availability_by_pincode(pin_code)
             except:
                 bot.reply_to(message,"""Something went wrong in cowin requests ,make sure you have followed proper format and correct pin code
 /slot pincode
