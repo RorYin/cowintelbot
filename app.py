@@ -37,7 +37,7 @@ Slots available for you pincode :
                 bot.reply_to(message,"""Something went wrong ,make sure you have followed proper format and correct pin code
 /slot pincode
 example "/slot 560001" """)
-                exit(0)
+                
                 
             #start colleting info
             try: 
@@ -46,10 +46,9 @@ example "/slot 560001" """)
                 available_centers = queryhandler(pin_code)
 
             except:
-                bot.reply_to(message,"""Something went wrong ,make sure you have followed proper format and correct pin code
-/slot pincode
-example "/slot 560001" """)
-                exit(0)
+                pass
+                
+                
             try:
                 for center in available_centers['centers']:
                     toprint = toprint + f"""
