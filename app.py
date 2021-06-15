@@ -4,14 +4,14 @@ from helper import queryhandler
 
 
 
-bot = telebot.TeleBot("1829549895:AAETrgNwUl-R1p4bQX3Pg4v9M-4wZLld3jU")
+bot = telebot.TeleBot("YourTelegamBotToken") #Replace with ur bot token 
 
 
 #Bot handler for start and help commands
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     print(message.chat.id)
-    if 1:#message.chat.id == -1001416258735 or message.chat.id == 941874401 or message.chat.id == 887572477:
+    if 1:#message.chat.id == yourchatid #if you want the bot to work only for you replace "yourcahtid" with your telegram chat id 
         bot.send_photo(message.chat.id,"https://telegra.ph/file/101ee79716b7af4db8ecb.jpg","""Welcome to Covid-19 Vaccination Slots Finder Bot 
 How to use?
 /slot pincode
@@ -29,7 +29,7 @@ def echo_all(message):
     toprint = """Please Note: All data is fetched from the official cowin public api ,for more info and booking details visit https://www.cowin.gov.in/home
 Slots available for you pincode :
 """
-    if 1:#message.chat.id == -1001416258735 or message.chat.id == 941874401 or message.chat.id == 887572477:
+    if 1:
         if "/slot" in message.text:
             try:
                 pin_code=(message.text).split(" ")[1]
