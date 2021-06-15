@@ -1,5 +1,5 @@
 import requests
-from requests.models import requote_uri
+
 
 def queryhandler(pincode):
     headers = {
